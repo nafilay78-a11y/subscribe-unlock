@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscribe to Unlock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #020617, #020617);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #e5e7eb;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(180deg, #020617, #020617);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      width: 100%;
+      height: 52px;
+      border-radius: 14px;
+      border: none;
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn span.step {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .subscribe { background: #dc2626; color: #fff; }
+    .like { background: #2563eb; color: #fff; }
+
+    .download {
+      background: #22c55e;
+      color: #052e16;
+      text-decoration: none;
+      display: none;
+    }
+
+    .status {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #cbd5f5;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+  <h1>Subscribe & Like to Unlock</h1>
+  <div class="subtitle">Support creator agar bisa download texture tanpa iklan 🚀</div>  <button class="btn subscribe" onclick="doSubscribe()">
+    <span class="step">1</span> Subscribe YouTube
+  </button>  <button class="btn like" onclick="doLike()">
+    <span class="step">2</span> Like Video
+  </button>  <a id="downloadBtn" class="btn download" href="https://www.mediafire.com/file/0b8unkh9a5b3xi5/ULUS10537.7z/file" target="_blank">
+    ⬇ Download Texture
+  </a>  <div id="status" class="status">Menunggu aksi...</div>
+</div>
+  <script>
+  let subscribed = false;
+  let liked = false;
+
+  function doSubscribe() {
+    window.open('https://youtube.com/@dbztttsx?si=mm8KVOz74u8BX-Ln', '_blank');
+    subscribed = true;
+    updateUI();
+  }
+
+  function doLike() {
+    window.open('https://youtu.be/GmsCSSiNOEc?si=-Rsr3LkmNND1NvS9', '_blank');
+    liked = true;
+    updateUI();
+  }
+
+  function updateUI() {
+    if (subscribed && liked) {
+      document.getElementById('downloadBtn').style.display = 'flex';
+      document.getElementById('status').innerText = 'Terima kasih 🙏 Download terbuka!';
+    } else {
+      document.getElementById('status').innerText = 'Selesaikan semua langkah untuk unlock';
+    }
+  }
+  </script>
+</body>
+</html>
